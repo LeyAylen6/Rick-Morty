@@ -1,0 +1,32 @@
+.searchBar {
+    background-color: rgb(4, 4, 4);
+    height: 40px;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} 
+
+.searchBarInput {
+    height: 100%;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 1px 2px 12px black;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.searchBarButton {
+    background-color: rgb(45, 187, 192);
+    height: 100%;
+    width: 20%;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+}
+
+.searchBarButton:hover {
+    background-color: rgb(139, 237, 241);
+    transition: 0.4s;
+}

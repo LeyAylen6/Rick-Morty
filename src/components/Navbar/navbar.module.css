@@ -1,0 +1,70 @@
+.navBar {
+    background-color: black;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img {
+    width: 28%;
+    height: 75%;
+}
+
+.buttonsContainer {
+    height: 40px;
+    width: 25%;
+}
+
+.aboutButton {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    border: none;
+    font-size: 20px;
+}
+
+.aboutLinkButton {
+    color: white;
+    text-decoration: none;
+}
+
+.aboutButton:hover {
+    background-color: rgb(45, 187, 192);
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+.homeButton {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    border: none;
+    font-size: 20px;
+    border-left: solid 1px white;
+}
+
+.homeLinkButton {
+    color: white;
+    text-decoration: none;
+}
+
+.homeButton:hover {
+    background-color: rgb(45, 187, 192);
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+.logout {
+    background-color: rgb(45, 187, 192);
+    height: 27%;
+    width: 45px;
+    border-radius: 18px;
+    border: none;
+}
+
+.logout:hover {
+    background-color: rgb(251, 47, 16);
+    transition: 0.2s;
+}
