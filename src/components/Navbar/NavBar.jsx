@@ -3,7 +3,6 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 import styles from './navbar.module.css';
 import image from './../../assets/rick.jpg';
 import { Link } from "react-router-dom";
-import { Icon } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const NavBar = (props) => {
@@ -18,6 +17,10 @@ const NavBar = (props) => {
 
                 <button className={styles.homeButton}>
                     <Link to= {'/home'} className={styles.homeLinkButton}>Home</Link>
+                </button>
+
+                <button className={styles.homeButton}>
+                    <Link to= {'/favorites'} className={styles.homeLinkButton}>Favorites</Link>
                 </button>
             </div>
 

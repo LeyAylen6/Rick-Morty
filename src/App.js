@@ -4,6 +4,7 @@ import NavBar from './components/Navbar/NavBar';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Routes, useLocation } from 'react-router-dom';
@@ -15,12 +16,12 @@ const API_KEY = '3c0d461e0779.b55c53a0610570647f8c';
 function App() {
    let [characters, setCharacters] = useState([]);
 
-   let [access, setAccess] = useState(true);
+   let [access, setAccess] = useState(false);
 
    const navigate = useNavigate();
 
    const EMAIL = 'email@gmail.com'
-   const PASSWORD = 'Password'
+   const PASSWORD = 'Password2'
 
    const onSearch = (id) => {
       axios(`${URL_BASE}/${id}?key=${API_KEY}`)
@@ -64,6 +65,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
+            <Route path='/favorites' element={<Favorites />} />
          </Routes>
       </div>
    );

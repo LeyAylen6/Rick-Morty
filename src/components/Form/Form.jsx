@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { emailValidation, passwordValidation } from "../validation.js"
+import { validation } from "./../Validation/validation.js"
 import styles from './form.module.css'
 import imageLogin from './../../assets/rick_login.jpg'
 
@@ -9,10 +9,7 @@ const Form = (props) => {
         password: ''
     })
 
-    let [errors, setErrors] = useState({
-        email: '',
-        password: ''
-    })
+    let [errors, setErrors] = useState({})
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -20,21 +17,25 @@ const Form = (props) => {
             ...userData, // Otra forma de traer lo que tenia el estado.
             [event.target.name]: event.target.value 
         })
-        validation()
+        
+        setErrors(validation({
+            ...userData,
+            [event.target.name]: event.target.value
+        }))
     };
 
-    let validation = () => {
-        let objectError = {
-            email: '',
-            password:''
-        }
+    // let validation = () => {
+    //     let objectError = {
+    //         email: '',
+    //         password:''
+    //     }
 
-        objectError.email = emailValidation(userData.email)
+    //     objectError.email = emailValidation(userData.email)
 
-        objectError.password = passwordValidation(userData.password)
+    //     objectError.password = passwordValidation(userData.password)
     
-        setErrors(objectError);
-    }
+    //     setErrors(objectError);
+    // }
     
     const handleSubmit = (event) => {
         event.preventDefault()
