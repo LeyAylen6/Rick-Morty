@@ -1,7 +1,6 @@
 .card {
-    background-color: rgb(252, 246, 116);
     width: 300px;
-    height: 380px;
+    height: 350px;
     border-radius: 30px;
     box-shadow: 5px 7px 15px black;
     display: flex;
@@ -16,18 +15,8 @@
 
 img {
     width: 300px;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    margin-bottom: 15px;
-}
-
-.linkName {
-    height: 45px;
-    color: black;
-    text-decoration: none;
-    background-color: rgb(247, 80, 14);
-    border-radius: 5px;
-    font-size: 20px;
+    height: 350px;
+    border-radius: 30px;
 }
 
 .button {

@@ -3,22 +3,26 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api';
+const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
 const API_KEY = '3c0d461e0779.b55c53a0610570647f8c';
 
 const Detail = () => {
     const [character, setCharacter] = useState({});
     let {id} = useParams()
 
+    console.log(character)
+
     useEffect(() => {
         axios(`${URL_BASE}/${id}?key=${API_KEY}`)
         .then(({ data }) => {
+            setCharacter(data);
            if (data.name) {
-              setCharacter(data);
            } else {
               window.alert('No hay personajes con ese ID');
            }
-        });
+        })
+        .catch((error) => console.log('data', error)
+        )
         return setCharacter({});
     }, [id]);
 

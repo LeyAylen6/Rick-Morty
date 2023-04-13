@@ -19,8 +19,8 @@ const NavBar = (props) => {
                     <Link to= {'/home'} className={styles.homeLinkButton}>Home</Link>
                 </button>
 
-                <button className={styles.homeButton}>
-                    <Link to= {'/favorites'} className={styles.homeLinkButton}>Favorites</Link>
+                <button className={styles.favoritesButton}>
+                    <Link to= {'/favorites'} className={styles.favoritesLinkButton}>Favorites</Link>
                 </button>
             </div>
 

@@ -59,7 +59,7 @@ const Form = (props) => {
 
             <div className={styles.inputContainer}>
                 <label className={styles.label} htmlFor='password' >Password </label>
-                <input className={styles.input} name='password' type='text' onChange={handleChange} value={userData.password} placeholder='Ingresa una contraseña'></input>
+                <input className={styles.input} name='password' type='password' onChange={handleChange} value={userData.password} placeholder='Ingresa una contraseña'></input>
             
                 <div className={styles.errorContainer} >
                     {errors.password ? <p className={styles.error}>{errors.password}</p> : null}

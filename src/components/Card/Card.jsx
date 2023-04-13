@@ -21,7 +21,8 @@ const Card = (props) => {
 
    useEffect(() => {
       myFavorites.forEach((fav) => {
-         if (fav.id === props.id) {
+         console.log(myFavorites)
+         if (fav.id === props.character.id) {
             setIsFav(true);
          }
       });
@@ -40,14 +41,12 @@ const Card = (props) => {
 
    return (
       <div className={styles.card}>
-         { isFav ? (<button onClick={handleFavorite}>❤️</button>) : (<button onClick={handleFavorite}>🤍</button>)}
+         <button onClick={handleFavorite}> { isFav ? '❤️' : '🤍' }</button> 
          
-         <button className={styles.button} onClick={() => props.onClose(props.character.id)}>X</button>
+         {props.onClose ? <button className={styles.button} onClick={() => props.onClose(props.character.id)}>X</button> : null}
          
-         <img className={styles.img} src={props.character.image} alt='Rick and Morty' />
-
          <Link to={`/detail/${props.character.id}`} className={styles.linkName}>
-            <h3 className="cardName">{props.character.name}</h3>
+            <img className={styles.img} src={props.character.image} alt='Rick and Morty' />
          </Link>
          
       </div>
