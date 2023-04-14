@@ -38,6 +38,8 @@ const Favorites = (props) => {
                 <option value="Genderless">Genderless</option>
 
                 <option value='unknown'>unknown</option>
+
+                <option value='allCharacters'>allCharacters</option>
             </select>
 
             <div className={stylesCards.cardsContainer}>
