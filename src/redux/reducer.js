@@ -7,18 +7,28 @@ export const rootReducer = (state = initialState, { type, payload }) => {
         case ADD_FAV: 
             return {
                 ...state, 
-                myFavorites: [ payload, ...state.myFavorites],
-                allCharacters: state.myFavorites
+                myFavorites: [ payload, ...state.allCharacters],
+                allCharacters: [ payload, ...state.allCharacters]
             }
 
         case REMOVE_FAV:
             return {...state, myFavorites: state.myFavorites.filter((favorite) => favorite.id !== payload)}
         
         case FILTER:
+            let allCharactersFiltered = state.allCharacters.filter((character) => character.gender == payload)
+
             return {
                 ...state, 
-                myFavorites: [...state.allCharacters].filter((character) => character.gender == payload)
+                myFavorites: 
+                    payload === 'allCharacters' ? [...state.allCharacters] : allCharactersFiltered
             }
+
+            // return {
+            //     ...state, 
+            //     myFavorites:
+            //     payload === 'allCharacters' ? [...state.allCharacters] : [...state, allCharactersFiltered]}
+            // }
+        
         
         case ORDER:
             let filter
@@ -26,7 +36,7 @@ export const rootReducer = (state = initialState, { type, payload }) => {
             if (payload === 'A') filter = [...state.allCharacters].sort((a, b) => a.id - b.id)
             
             if (payload === 'D') filter = [...state.allCharacters].sort((a, b) => b.id - a.id)
-            console.log(state.myFavorites)
+        
             return {
                 ...state,
                 myFavorites: filter

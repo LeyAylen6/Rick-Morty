@@ -11,7 +11,7 @@ const SearchBar = (props) => {
    return (
       <div className={styles.searchBar}>
          <input className={styles.searchBarInput} type='search' onChange={handleChange} value={input} />
-         <button className={styles.searchBarButton} onClick={() =>{props.onSearch(input); setInput('')}}>Agregar</button>
+         <button className={styles.searchBarButton} onClick={() =>{props.onSearch(input); setInput('')}}>Add character</button>
       </div>
    );
 }

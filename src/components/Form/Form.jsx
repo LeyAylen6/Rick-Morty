@@ -43,7 +43,7 @@ const Form = (props) => {
     }
 
     return (
-        <form className={styles.formContainer}>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
 
             <img src={imageLogin} className={styles.image} />
             
@@ -66,7 +66,7 @@ const Form = (props) => {
                 </div>
             </div>
 
-            <button className={styles.submitButton} type='submit' onClick={handleSubmit} disabled={errors.email || errors.password || !userData.email || !userData.password}>
+            <button className={styles.submitButton} type='submit' disabled={errors.email || errors.password || !userData.email || !userData.password}>
                 Submit
             </button>
         </form>

@@ -5,4 +5,7 @@
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   background-image: url("./assets/fondo_login.avif"); 
+   background-repeat: no-repeat;
+   background-size: 100%;
 }
