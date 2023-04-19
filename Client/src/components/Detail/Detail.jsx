@@ -4,17 +4,16 @@ import { useState } from "react";
 import { useEffect } from "react";
 import styles from './detail.module.css'
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+const URL_BASE = 'http://localhost:3001/rickandmorty/character';
 const API_KEY = '3c0d461e0779.b55c53a0610570647f8c';
 
 const Detail = () => {
     const [character, setCharacter] = useState({});
     let {id} = useParams()
-
-    console.log(character)
+    //?key=${API_KEY}
 
     useEffect(() => {
-        axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+        axios(`${URL_BASE}/${id}`)
         .then(({ data }) => {
             setCharacter(data);
            if (data.name) {

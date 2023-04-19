@@ -10,7 +10,7 @@ import axios from 'axios';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+const URL_BASE = 'http://localhost:3001/rickandmorty/character'
 const API_KEY = '3c0d461e0779.b55c53a0610570647f8c';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
    const PASSWORD = 'Password2'
 
    const onSearch = (id) => {
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      axios(`${URL_BASE}/${id}`)
       .then(response => response.data)
       .then((data) => {
          if (data.name) {
