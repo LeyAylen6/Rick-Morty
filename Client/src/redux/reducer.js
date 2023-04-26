@@ -1,45 +1,67 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions"
+import { ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions"
 
-const initialState = {myFavorites: [], allCharacters: []}
+const initialState = {
+    accessLogin: false,
+    charactersById: [],
+    myFavorites: [], 
+    favoritesFiltered: []
+}
 
 export const rootReducer = (state = initialState, { type, payload }) => {
     switch(type) {
-        case ADD_FAV: 
+
+        case ACCESS_LOGIN:
             return {
-                ...state, 
-                myFavorites: [ payload, ...state.allCharacters],
-                allCharacters: [ payload, ...state.allCharacters]
+                ...state,
+                accessLogin: payload
             }
+
+        case GET_CHARACTERS_BY_ID:
+            return {
+                ...state,
+                charactersById: [payload, ...state.charactersById]
+            }
+
+        case DELETE_CARD:
+            return {
+                ...state,
+                charactersById: [...state.charactersById].filter(character => character.id !== payload)
+            }
+
+        case ADD_FAV:
+            return { 
+                ...state, 
+                myFavorites: payload,
+                favoritesFiltered: payload
+            };
 
         case REMOVE_FAV:
-            return {...state, myFavorites: state.myFavorites.filter((favorite) => favorite.id !== payload)}
+            return { 
+                ...state, 
+                myFavorites: payload,
+                favoritesFiltered: payload
+            };
         
         case FILTER:
-            let allCharactersFiltered = state.allCharacters.filter((character) => character.gender == payload)
 
             return {
                 ...state, 
-                myFavorites: 
-                    payload === 'allCharacters' ? [...state.allCharacters] : allCharactersFiltered
+                favoritesFiltered: 
+                    payload === 'allCharacters' 
+                    ? [...state.myFavorites] 
+                    : state.myFavorites.filter((character) => character.gender == payload)
             }
-
-            // return {
-            //     ...state, 
-            //     myFavorites:
-            //     payload === 'allCharacters' ? [...state.allCharacters] : [...state, allCharactersFiltered]}
-            // }
-        
         
         case ORDER:
             let filter
 
-            if (payload === 'A') filter = [...state.allCharacters].sort((a, b) => a.id - b.id)
+            if (payload === 'A') filter = [...state.favoritesFiltered].sort((a, b) => a.id - b.id)
             
-            if (payload === 'D') filter = [...state.allCharacters].sort((a, b) => b.id - a.id)
+            if (payload === 'D') filter = [...state.favoritesFiltered].sort((a, b) => b.id - a.id)
         
             return {
                 ...state,
-                myFavorites: filter
+                favoritesFiltered: filter
             }
 
         default:

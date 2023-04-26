@@ -2,8 +2,14 @@ import { useState } from "react";
 import { validation } from "./../Validation/validation.js"
 import styles from './form.module.css'
 import imageLogin from './../../assets/rick_login.jpg'
+import { useDispatch } from "react-redux";
+import { accessLogin } from "../../redux/actions.js";
+import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     let [userData, setUserData] = useState({
         email: '',
         password: ''
@@ -23,23 +29,13 @@ const Form = (props) => {
             [event.target.name]: event.target.value
         }))
     };
-
-    // let validation = () => {
-    //     let objectError = {
-    //         email: '',
-    //         password:''
-    //     }
-
-    //     objectError.email = emailValidation(userData.email)
-
-    //     objectError.password = passwordValidation(userData.password)
-    
-    //     setErrors(objectError);
-    // }
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.login(userData)
+    
+        accessLogin(userData, dispatch)
+        
+        //accessLogin && navigate('/home');
     }
 
     return (

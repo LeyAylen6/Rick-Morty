@@ -4,8 +4,22 @@ import styles from './navbar.module.css';
 import image from './../../assets/rick.jpg';
 import { Link } from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/actions.js";
+import { getCharactersById } from "../../redux/actions.js";
 
 const NavBar = (props) => {
+    const dispatch = useDispatch();
+
+    const hadleLogout = () => {
+        dispatch(logout())
+    }
+
+    const onSearchRandom = () => {
+        let randomId = Math.round(Math.random() * 1000) + 1
+        getCharactersById(randomId, dispatch)
+    }
+
     return(
         <div className={styles.navBar}>
             <img className={styles.img} src={image} alt=''></img>
@@ -24,9 +38,11 @@ const NavBar = (props) => {
                 </button>
             </div>
 
-            <SearchBar onSearch={props.onSearch} />
+            <SearchBar />
 
-            <button className={styles.logout} onClick={props.logout}>
+            <button className={styles.randomCharacterButton} onClick={onSearchRandom}>Add Random character</button>
+
+            <button className={styles.logout} onClick={hadleLogout}>
                 <LogoutIcon />
             </button>
         </div>

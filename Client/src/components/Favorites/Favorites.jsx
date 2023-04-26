@@ -24,28 +24,31 @@ const Favorites = (props) => {
         <div className={styles.favoritesContainer}>
             <h1>My favorites</h1>
 
-            <select onChange={handleOrder}>
-                <option value="A">Ascendente</option>
-
-                <option value='D'>Descendente</option>
-            </select>
-
-            <select onChange={handleFilter}>
-                <option value="Male">Male</option>
-
-                <option value='Female'>Female</option>
-
-                <option value="Genderless">Genderless</option>
-
-                <option value='unknown'>unknown</option>
-
-                <option value='allCharacters'>allCharacters</option>
-            </select>
-
             <div className={stylesCards.cardsContainer}>
+
+                <div className={styles.selectContainer}>
+                    <select className={`${styles.select} ${styles.select1}`} onChange={handleOrder}>
+                        <option value="A">Ascendente</option>
+
+                        <option value='D'>Descendente</option>
+                    </select>
+
+                    <select className={styles.select} onChange={handleFilter}>
+                        <option value="allCharacters">All Characters</option>
+
+                        <option value='Male'>Male</option>
+
+                        <option value='Female'>Female</option>
+
+                        <option value="Genderless">Genderless</option>
+
+                        <option value='unknown'>unknown</option>
+                    </select>
+                </div>
+
                 {props.myFavorites.map((character) => <Card character={character} key={character.id} /> )}
             </div>
-
+            
             
         </div>
     )
@@ -53,7 +56,7 @@ const Favorites = (props) => {
 
 const mapStateToProps = (state) => {                           
     return {
-       myFavorites: state.myFavorites,
+       myFavorites: state.favoritesFiltered,
     };
 }
 

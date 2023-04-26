@@ -1,20 +1,24 @@
-.cardsContainer {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
+.homeContainer {
+    background-color: rgb(175, 250, 250);
+    display: grid;
+    grid-template-rows: 100px 420px;
+    grid-template-columns: 19% 19% 19% 19%;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
     width: 100%;
-    height: 100%;
-    background-color: rgb(45, 187, 192);
+    height: 100vh;
+    justify-items: center;
+    justify-content: center;
+}
+
+.homeContainer > h1 {
+    grid-column: 1 / 5;
 }
 
 .homeContainer {
-    display: flex;
+    /* display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    background-image: url("./../../assets/fondo.png");
-    background-position-x: 0px;
-    background-position-y: -250px;
-    background-repeat: no-repeat;
+    height: 100%; */
 }

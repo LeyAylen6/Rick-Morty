@@ -5,67 +5,46 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites'
+import NotFound from './components/NotFound/NotFound';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+//require("dotenv").config()
+
 
 const URL_BASE = 'http://localhost:3001/rickandmorty/character'
-const API_KEY = '3c0d461e0779.b55c53a0610570647f8c';
 
 function App() {
-   let [characters, setCharacters] = useState([]);
-
-   let [access, setAccess] = useState(false);
+   //dotenv.config();
+   //console.log(dotenv.config())
 
    const navigate = useNavigate();
-
-   const EMAIL = 'email@gmail.com'
-   const PASSWORD = 'Password2'
-
-   const onSearch = (id) => {
-      axios(`${URL_BASE}/${id}`)
-      .then(response => response.data)
-      .then((data) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });
-   }
-
-   const onClose = (id) => {
-      const charactersFiltered = characters.filter(character => character.id !== id)
-      setCharacters(charactersFiltered)
-   }
-
-   const login = (userData) => {
-      if (EMAIL === userData.email && PASSWORD === userData.password){
-         setAccess(true);
-         navigate('/home');
-      } 
-   }
-
-   const logout = () => {
-      setAccess(false);
-   }
+   const accessLogin = useSelector((state) => state.accessLogin)
 
    useEffect(() => {
-      !access && navigate('/');
-   }, [access]);
+      !accessLogin && navigate('/');
+      accessLogin && navigate('/home'); //Si quiero poner 404, tengo q eliminar esto y agregar cookies.
+   }, [accessLogin]);
+
+   // Tendria que agregar que cambie tambien segun el estado de error
+   // Si error === true que se modifique un estado (CREAR NUEVO) en react 
+   // con el cual vamos a poner despues en return 
+   // si estado react == true, renderiza x componente : null
 
 
    return (
       <div className='App'>
-         {useLocation().pathname !== '/' && <NavBar logout={logout} onSearch={onSearch} /> }
-         {useLocation().pathname === '/' && <Form login={login} /> }
+         {useLocation().pathname !== '/' && <NavBar /> }
+         {useLocation().pathname === '/' && <Form /> }
          
          <Routes> 
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/home' element={<Cards />} /> 
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
             <Route path='/favorites' element={<Favorites />} />
+            {/* <Route path='/:other' element={<NotFound />} /> */}
          </Routes>
       </div>
    );

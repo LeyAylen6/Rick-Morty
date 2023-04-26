@@ -1,6 +1,6 @@
 .navBar {
     background-color: black;
-    height: 150px;
+    height: 180px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
 
 .buttonsContainer {
     height: 40px;
-    width: 30%;
+    width: 25%;
 }
 
 .aboutButton {
@@ -76,6 +76,20 @@
     transition: 0.5s;
 }
 
+.randomCharacterButton {
+    background-color: rgb(45, 187, 192);
+    height: 40px;
+    width: 135px;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+}
+
+.randomCharacterButton:hover {
+    background-color: rgb(139, 237, 241);
+    transition: 0.4s;
+}
+
 .logout {
     background-color: rgb(45, 187, 192);
     height: 27%;
@@ -85,6 +99,6 @@
 }
 
 .logout:hover {
-    background-color: rgb(251, 47, 16);
+    background-color: rgb(255, 71, 71);
     transition: 0.2s;
 }
