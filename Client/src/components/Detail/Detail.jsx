@@ -22,17 +22,22 @@ const Detail = () => {
     return (
         <section className={styles.characterContainer}>
             <div className={styles.imagenContainer}>
-                {character ? <img src={character.image}></img> : null}
+                {character ? <img src={character.image} className={styles.imageDetail}></img> : 'Este personaje no tiene imagen'}
             </div>
             
             <div className={styles.division}></div>
 
-            <div className={styles.descriptionContainer} >
-                {character ? <h1>{character.name}</h1> : null}
-                {character ? <h2>Status | {character.status}</h2> : null}
-                {character ? <h2>Species | {character.species}</h2> : null}
-                {character ? <h2>Gender | {character.gender}</h2> : null}
-                {character && character.origin ? <h2>Origin | {character.origin.name}</h2> : null}
+            <div className={styles.detailContainer}>
+                {character ? <h1>- {character.name} -</h1> : null}
+
+                <div className={styles.descriptionContainer}>
+                    {character ? <h2>Status | {character.status}</h2> : null}
+                    {character ? <h2>Species | {character.species}</h2> : null}
+                    {character ? <h2>Gender | {character.gender}</h2> : null}
+                    {character && character.origin ? <h2>Origin | {character.origin.name}</h2> : null}
+
+                </div>
+        
             </div>
         </section>
         // Otra opcion(Conditional chaining) --> <h2>{character?.name}</h2>

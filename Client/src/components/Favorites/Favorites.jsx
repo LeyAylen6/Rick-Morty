@@ -22,33 +22,33 @@ const Favorites = (props) => {
 
     return (
         <div className={styles.favoritesContainer}>
-            <h1>My favorites</h1>
+            <h1>- My favorites -</h1>
 
-            <div className={stylesCards.cardsContainer}>
+            <div className={styles.selectContainer}>
+                <select className={`${styles.select} ${styles.select1}`} onChange={handleOrder}>
+                    <option>Order</option>
 
-                <div className={styles.selectContainer}>
-                    <select className={`${styles.select} ${styles.select1}`} onChange={handleOrder}>
-                        <option value="A">Ascendente</option>
+                    <option value="A">Ascendent</option>
 
-                        <option value='D'>Descendente</option>
-                    </select>
+                    <option value='D'>Descendent</option>
+                </select>
 
-                    <select className={styles.select} onChange={handleFilter}>
-                        <option value="allCharacters">All Characters</option>
+                <select className={styles.select} onChange={handleFilter}>
+                    <option value="allCharacters">All Characters</option>
 
-                        <option value='Male'>Male</option>
+                    <option value='Male'>Male</option>
 
-                        <option value='Female'>Female</option>
+                    <option value='Female'>Female</option>
 
-                        <option value="Genderless">Genderless</option>
+                    <option value="Genderless">Genderless</option>
 
-                        <option value='unknown'>unknown</option>
-                    </select>
-                </div>
+                    <option value='unknown'>unknown</option>
+                </select>
+            </div>
 
+            <div className={styles.cardsContainer}>
                 {props.myFavorites.map((character) => <Card character={character} key={character.id} /> )}
             </div>
-            
             
         </div>
     )

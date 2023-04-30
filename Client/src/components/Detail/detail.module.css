@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
 .characterContainer {
-    background-color: rgba(117, 227, 223, 0.982);
     width: 100%;
-    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .imagenContainer {
-    height: 350px;
-    width: 300px;
-    background-color: aqua;
-    border-radius: 30px;
-    box-shadow: 2px 3px 10px;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.imageDetail {
+    height: 100%;
+    width: 100%;
 }
 
 .division {
@@ -21,15 +27,33 @@
     background-color: black;
 }
 
+.detailContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .descriptionContainer {
-    background-color: rgb(182, 239, 234);
-    height: 500px;
-    width: 600px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 400px;
+    width: 550px;
+    opacity: 0.6;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 25px;
     box-shadow: 2px 3px 10px;
+}
 
+.descriptionContainer > h2 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detailContainer > h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 65px
 }

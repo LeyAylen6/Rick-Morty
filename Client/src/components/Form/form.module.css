@@ -1,7 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,700;1,900&display=swap');
+
+.containerAccess {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    font-family: 'Creepster', cursive;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.containerAccess > h1 {
+    z-index: 10;
+    top: 0;
+    left: 160px;
+    font-size: 70px;
+    color: white;
+    position: absolute;
+    color: rgb(36, 200, 191);
+    text-shadow: 3px 4px 1px rgb(14, 21, 19), 5px 7px 2px rgb(225, 254, 8), 0px 0px 10px rgb(0, 0, 0);
+}
+
 .formContainer {
-    width: 450px;
-    height: 650px;
-    background-color: rgb(210, 244, 245);
+    position: absolute;
+    right: 100px;
+    width: 26%;
+    height: 70%;
+    background-color: rgb(36, 200, 191);
+    opacity: 0.85;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -10,54 +49,61 @@
     box-shadow: 2px 3px 15px black;
 }
 
-.image {
-    margin-top: 15px;
-    width: 82%;
-    height: 350px;
-    background-color: rgb(45, 187, 192);
-    border-radius: 50%;
+.formContainer > h2 {
+    margin-top: 0px;
+    font-size: 70px;
+    font-family: 'Creepster', cursive;
 }
 
 .inputContainer {
+    margin-top: -80px;
     height: 100px;
     width: 70%;
+    margin-bottom: 15px;
 }
 
 .label {
-    color: rgb(3, 159, 164);
-    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
 }
 
-.input{
+.input {
     height: 35px;
     width: 300px;
     border-radius: 7px;
     border-color: rgb(45, 187, 192);
     padding-left: 10px;
     font-size: 15px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .errorContainer {
-    width: 70%;
+    width: 100%;
     height: 10px;
 }
 
 .error{
     color: red;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 .submitButton{
-    background-color: rgb(45, 187, 192);
-    height: 35px;
-    width: 90px;
+    margin-top: -15px;
+    background-color: rgb(230, 244, 83);
+    height: 45px;
+    width: 140px;
     border-radius: 8px;
+    border: none;
     font-size: 17px;
     color: black;
     margin-bottom: 15px;
+    box-shadow: 2px 3px 1px black;
 }
 
 .submitButton:hover{
-    background-color: rgb(139, 237, 241);
-    transition: 0.4s;
+    background-color: yellow;
+    transition: 0.2s;
+    
 }

@@ -1,24 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
 .homeContainer {
     background-color: rgb(175, 250, 250);
     display: grid;
-    grid-template-rows: 100px 420px;
-    grid-template-columns: 19% 19% 19% 19%;
-    grid-column-gap: 50px;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: 100px 350px;
     grid-row-gap: 50px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     justify-items: center;
     justify-content: center;
+    color: rgb(0, 0, 0);
 }
 
 .homeContainer > h1 {
     grid-column: 1 / 5;
 }
 
-.homeContainer {
-    /* display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%; */
-}

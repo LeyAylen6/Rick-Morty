@@ -8,7 +8,7 @@ const Cards = (props) => {
    
    return(
       <div className={styles.homeContainer}>
-         <h1>Home</h1>
+         <h1>- Home -</h1>
       
          {charactersById && charactersById.map((character) => {
             return <Card character={character} key={character.id} onClose={props.onClose}/>

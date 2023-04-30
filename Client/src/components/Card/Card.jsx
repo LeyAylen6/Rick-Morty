@@ -39,7 +39,15 @@ const Card = (props) => {
    }
 
    return (
+
       <div className={styles.card}>
+
+         <div className={styles.linkNameCard}>
+            <Link to={`/detail/${props.character.id}`} className={styles.linkName}>
+              {props.character.name} 
+            </Link>
+         </div>
+
          <button onClick={handleFavorite} className={styles.favorite}> { isFav ? '❤️' : '🤍' }</button> 
          
          {onClose ? <button className={styles.button} onClick={onClose}><HighlightOffIcon fontSize="small"/></button> : null}
@@ -47,8 +55,9 @@ const Card = (props) => {
          <Link to={`/detail/${props.character.id}`} className={styles.linkName}>
             <img className={styles.img} src={props.character.image} alt='Rick and Morty' />
          </Link>
-         
       </div>
+
+      
    );
 }
 

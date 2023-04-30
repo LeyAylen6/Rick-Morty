@@ -40,7 +40,7 @@ const NavBar = (props) => {
 
             <SearchBar />
 
-            <button className={styles.randomCharacterButton} onClick={onSearchRandom}>Add Random character</button>
+            <button className={styles.randomCharacterButton} onClick={onSearchRandom}>Random</button>
 
             <button className={styles.logout} onClick={hadleLogout}>
                 <LogoutIcon />

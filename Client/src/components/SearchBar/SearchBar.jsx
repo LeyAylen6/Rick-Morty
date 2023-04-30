@@ -27,7 +27,7 @@ const SearchBar = () => {
    return (
       <div className={styles.searchBar}>
          <input className={styles.searchBarInput} type='search' onChange={handleChange} value={inputId} />
-         <button className={styles.searchBarButton} onClick={() => {onSearch() ; setInputId('')}} >Add character</button>
+         <button className={styles.searchBarButton} onClick={() => {onSearch() ; setInputId('')}} >Search</button>
       </div>
    );
 }
