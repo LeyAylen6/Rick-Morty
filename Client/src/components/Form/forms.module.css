@@ -2,41 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,700;1,900&display=swap');
 
-.containerAccess {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    font-family: 'Creepster', cursive;
-}
-
-.imgContainer {
-    width: 100%;
-    height: 100%;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-}
-
-.containerAccess > h1 {
-    z-index: 10;
-    top: 0;
-    left: 160px;
-    font-size: 70px;
-    color: white;
-    position: absolute;
-    color: rgb(36, 200, 191);
-    text-shadow: 3px 4px 1px rgb(14, 21, 19), 5px 7px 2px rgb(225, 254, 8), 0px 0px 10px rgb(0, 0, 0);
-}
-
 .formContainer {
     position: absolute;
     right: 100px;
+    top: 150px;
     width: 26%;
     height: 70%;
     background-color: rgb(36, 200, 191);
@@ -47,24 +16,43 @@
     justify-content: space-around;
     border-radius: 10px;
     box-shadow: 2px 3px 15px black;
+    padding-bottom: 15px;
 }
 
-.formContainer > h2 {
-    margin-top: 0px;
+.signUpFocus{
+    animation: rotate;
+    animation-duration: 1s;
+}
+
+.logInFocus{
+    animation: rotate;
+    animation-duration: 1s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(180deg);
+
+    } 100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.formContainer > h1 {
+    margin-top: 30px;
     font-size: 70px;
     font-family: 'Creepster', cursive;
-}
-
-.inputContainer {
-    margin-top: -80px;
-    height: 100px;
-    width: 70%;
     margin-bottom: 15px;
 }
 
 .label {
     color: rgb(0, 0, 0);
     font-size: 25px;
+}
+
+.inputContainer {
+    width: 70%;
+    height: 115px;
 }
 
 .input {
@@ -79,7 +67,7 @@
 
 .errorContainer {
     width: 100%;
-    height: 10px;
+    height: 100%;
 }
 
 .error{
@@ -89,21 +77,27 @@
     font-weight: bold;
 }
 
+.hr {
+    height: 1px;
+    width: 355px;
+    background-color: black;
+    border: none;
+}
+
 .submitButton{
-    margin-top: -15px;
+    margin-bottom: 10px;
     background-color: rgb(230, 244, 83);
-    height: 45px;
-    width: 140px;
+    height: 43px;
+    width: 200px;
     border-radius: 8px;
     border: none;
     font-size: 17px;
     color: black;
-    margin-bottom: 15px;
     box-shadow: 2px 3px 1px black;
 }
 
 .submitButton:hover{
     background-color: yellow;
     transition: 0.2s;
-    
+    opacity: 1;
 }
