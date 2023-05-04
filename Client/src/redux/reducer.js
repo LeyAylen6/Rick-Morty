@@ -1,6 +1,7 @@
-import { ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions"
+import { SIGN_UP, ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions"
 
 const initialState = {
+    signUp: true,
     accessLogin: false,
     charactersById: [],
     myFavorites: [], 
@@ -10,6 +11,12 @@ const initialState = {
 export const rootReducer = (state = initialState, { type, payload }) => {
     switch(type) {
 
+        case SIGN_UP:
+            return {
+                ...state,
+                signUp: payload
+            }
+            
         case ACCESS_LOGIN:
             return {
                 ...state,

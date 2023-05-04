@@ -3,18 +3,14 @@ import Cards from './components/Cards/Cards.jsx';
 import NavBar from './components/Navbar/NavBar';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
-import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites'
 import NotFound from './components/NotFound/NotFound';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import FormBase from './components/Form/FormBase';
+
 //require("dotenv").config()
-
-
-const URL_BASE = 'http://localhost:3001/rickandmorty/character'
 
 function App() {
    //dotenv.config();
@@ -37,8 +33,8 @@ function App() {
    return (
       <div className='App'>
          {useLocation().pathname !== '/' && <NavBar /> }
-         {useLocation().pathname === '/' && <Form /> }
-         
+         { useLocation().pathname === '/' && <FormBase />}
+
          <Routes> 
             <Route path='/home' element={<Cards />} /> 
             <Route path='/about' element={<About />} />

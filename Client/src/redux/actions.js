@@ -1,6 +1,7 @@
 import axios from "axios";
 //const { URL_GET_CHARACTERS_BY_ID, URL_LOGIN, URL_ADD_FAV, URL_REMOVE_FAV_BY_ID } = process.env;
 
+export const SIGN_UP = 'SIGN_UP'
 export const ACCESS_LOGIN = 'ACCESS_LOGIN'
 export const GET_CHARACTERS_BY_ID = 'GET_CHARACTERS_BY_ID'
 export const DELETE_CARD = 'DELETE_CARD'
@@ -10,11 +11,34 @@ export const FILTER = 'FILTER'
 export const ORDER = 'ORDER'
 
 const URL_GET_CHARACTERS_BY_ID = 'http://localhost:3001/rickandmorty/character/';
-const URL_LOGIN = 'http://localhost:3001/rickandmorty/login/';
+const URL_SIGN_UP = 'http://localhost:3001/rickandmorty/signUp';
+const URL_LOGIN = 'http://localhost:3001/rickandmorty/login';
 const URL_ADD_FAV = 'http://localhost:3001/rickandmorty/fav';
 const URL_REMOVE_FAV_BY_ID = 'http://localhost:3001/rickandmorty/fav/';
 
 // ! PETICIONES CON ASYNC AWAIT
+
+export const createNewAccount = async(dispatch) => {
+
+   const response = await axios(URL_SIGN_UP)
+   
+   try {
+      const { signUp } = response.data;
+      dispatch({ type: SIGN_UP, payload: signUp })
+     
+   } catch(error) {
+      const { signUp } = error.response.data;
+      dispatch({ type: SIGN_UP, payload: signUp})
+   }
+}
+
+export const redirectSignUp = (dispatch) => {
+   dispatch({ type: SIGN_UP, payload: false})
+}
+
+export const redirectLogIn = (dispatch) => {
+   dispatch({ type: SIGN_UP, payload: true})
+}
 
 export const accessLogin = async (userData, dispatch) => {
    const { email, password } = userData;

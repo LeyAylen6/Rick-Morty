@@ -9,20 +9,20 @@ export const validation = (userData) => {
 
     //EMAIL 
 
-    if(!userData.email) errors.email = 'El campo no puede estar vacio';
+    if(!userData.email) errors.email = 'The field cannot be empty';
 
-    if(userData.email && !emailRegex.test(userData.email)) errors.email = 'Ingrese un email válido'
+    if(userData.email && !emailRegex.test(userData.email)) errors.email = 'Enter a valid email'
 
-    if(userData.email.length > 35) errors.email = 'El email puede contener 35 caracteres como maximo';
+    if(userData.email.length > 35) errors.email = 'The email can contain a maximum of 35 characters.';
 
     // PASSWORD
     
-    if(!userData.password) errors.password = 'El campo no puede estar vacio';
+    if(!userData.password) errors.password = 'The field cannot be empty';
 
-    if(userData.password.length < 6 || userData.password.length > 10 ) errors.password = 'La contraseña debe contener 6 y 10 caracteres';
+    if(userData.password.length < 6 || userData.password.length > 10 ) errors.password = 'Password must contain 6 and 10 characters';
 
     if(userData.password && !passwordRegex.test(userData.password)) {
-        errors.password = 'La contraseña debe contener al menos un número, una mayúscula y entre 6 y 10 caracteres';
+        errors.password = 'Must have a number, a capital letter and between 6 and 10 characters';
     }
     return errors;
 }
