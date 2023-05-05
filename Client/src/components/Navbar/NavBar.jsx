@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions.js";
 import { getCharactersById } from "../../redux/actions.js";
 
-const NavBar = (props) => {
+const NavBar = () => {
     const dispatch = useDispatch();
 
     const hadleLogout = () => {

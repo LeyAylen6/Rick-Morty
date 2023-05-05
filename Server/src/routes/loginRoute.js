@@ -1,15 +1,15 @@
 const loginRoute = require('express').Router()
-const { login } = require('./../controllers/login.js')
+const { login } = require('./../controllers/login.js')   
 
 loginRoute.get('/login', async(req, res) => {
     try {
-        const { email, password} = req.query;
+        const { email, password } = req.query;
         
         if ( !email || !password ) {
             return res.status(400).send("Faltan datos");
         };
         
-        const loginUser = await login(email, password)   
+        const loginUser = await login(email, password)  // devuelve {user: {..}, access:{...}} 
 
         return res.status(200).json(loginUser);
     

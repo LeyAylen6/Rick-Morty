@@ -18,9 +18,9 @@ const URL_REMOVE_FAV_BY_ID = 'http://localhost:3001/rickandmorty/fav/';
 
 // ! PETICIONES CON ASYNC AWAIT
 
-export const createNewAccount = async(dispatch) => {
+export const createNewAccount = async(newUserData, dispatch) => {
 
-   const response = await axios(URL_SIGN_UP)
+   const response = await axios.post(URL_SIGN_UP, newUserData)
    
    try {
       const { signUp } = response.data;
@@ -46,18 +46,16 @@ export const accessLogin = async (userData, dispatch) => {
    const response = await axios(`${URL_LOGIN}?email=${email}&password=${password}`)
 
    try {
-      const { access } = response.data;
-      dispatch({ type: ACCESS_LOGIN, payload: access })
+      const userAndAccess = response.data;
+      dispatch({ type: ACCESS_LOGIN, payload: userAndAccess })
       
-   
    } catch(error) {
-      const { access } = error.response.data;
-      dispatch({ type: ACCESS_LOGIN, payload: access })
+      // dispatch de un estado error.
    };  
 }
 
 export const logout = () => {
-   return {type: ACCESS_LOGIN, payload: false}
+   return {type: ACCESS_LOGIN, payload: {access: false}}
 }
 
 export const getCharactersById = async (id, dispatch) => {
@@ -77,18 +75,17 @@ export const deleteCard = (id) => {
    return {type: DELETE_CARD, payload: id}
 }
 
-export const addFav = async (character, dispatch) => {
+// ! Cuando es post el segundo parametro es lo que le mandas al back y el back lo recibe en el body
+export const addFav = async (character, user, dispatch) => {
 
-   const response = await axios.post(URL_ADD_FAV, character)
-   
    try {
+      const response = await axios.post(URL_ADD_FAV, {character, user})
       dispatch({ type: ADD_FAV, payload: response.data});
    
    } catch(error) {
       // dispatch de un estado error.
    }
 };
-
 
 export const removeFav = async (id, dispatch) => {
    

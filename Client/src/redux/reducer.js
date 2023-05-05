@@ -2,7 +2,7 @@ import { SIGN_UP, ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMO
 
 const initialState = {
     signUp: true,
-    accessLogin: false,
+    accessLogin: {access: false},
     charactersById: [],
     myFavorites: [], 
     favoritesFiltered: []

@@ -34,7 +34,7 @@ const Form = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        createNewAccount(dispatch)
+        createNewAccount(newUserData, dispatch)
     }
 
     const redirectionLogIn = (event) => {
@@ -44,7 +44,7 @@ const Form = () => {
 
     return (
 
-        <form className={ `${styles.formContainer} ${styles.signUpFocus}` } handleSubmit={handleSubmit}>
+        <form className={ `${styles.formContainer} ${styles.signUpFocus}` } onSubmit={handleSubmit}>
             <h1>- Sign Up -</h1>
             
             {inputs?.map(input => {

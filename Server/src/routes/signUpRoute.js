@@ -1,7 +1,7 @@
 const signUpRoute = require('express').Router()
 const { postUser } = require('../controllers/postUser.js')
 
-signUpRoute.post('/signup', async(req, res) => { //Dice que sea /login??
+signUpRoute.post('/signUp', async(req, res) => { //Dice que sea /login??
     try {
         const { username, email, password} = req.body;
 

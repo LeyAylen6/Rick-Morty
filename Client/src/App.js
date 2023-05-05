@@ -20,8 +20,8 @@ function App() {
    const accessLogin = useSelector((state) => state.accessLogin)
 
    useEffect(() => {
-      !accessLogin && navigate('/');
-      accessLogin && navigate('/home'); //Si quiero poner 404, tengo q eliminar esto y agregar cookies.
+      !accessLogin.access && navigate('/');
+      accessLogin.access && navigate('/home'); //Si quiero poner 404, tengo q eliminar esto y agregar cookies.
    }, [accessLogin]);
 
    // Tendria que agregar que cambie tambien segun el estado de error
