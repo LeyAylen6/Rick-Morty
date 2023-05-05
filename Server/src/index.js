@@ -1,7 +1,6 @@
 const { server } = require('./app.js')
 const { conn } = require('./DB_connection');
-
-const PORT = 3001;
+const { PORT } = process.env;
 
 // Sincroniza Sequelize y pasamos listen en un then.
 conn.sync({ force: true })
