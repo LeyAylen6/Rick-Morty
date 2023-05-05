@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81ccd734.css",
+    "main.js": "/static/js/main.3d225e76.js",
+    "static/media/fondo.png": "/static/media/fondo.10a820658086982d3ff5.png",
+    "static/media/rick_and_morty.jpg": "/static/media/rick_and_morty.2a6cd1fdf764e04b1241.jpg",
+    "static/media/redux_logo.png": "/static/media/redux_logo.1b4bb5fceb01b19da59d.png",
+    "static/media/react_logo.png": "/static/media/react_logo.d552a90c9be1473fe906.png",
+    "static/media/LeilaSalguero.jpg": "/static/media/LeilaSalguero.8e84828e47b6dc27aff7.jpg",
+    "static/media/node_logo.png": "/static/media/node_logo.bc4b43cd5f20ba305059.png",
+    "static/media/rick.jpg": "/static/media/rick.8db0283c86d0e88f3dd1.jpg",
+    "static/media/express_logo.svg": "/static/media/express_logo.ebe71e3af30909288001fd7bc6d0094a.svg",
+    "static/media/github_logo.svg": "/static/media/github_logo.5531be85d7a8d6f333e5c7136944a022.svg",
+    "static/media/javascript_logo.svg": "/static/media/javascript_logo.fd46ca41839433d73577989d86eb2fe2.svg",
+    "static/media/linkedin_logo.svg": "/static/media/linkedin_logo.aabef34d94a912b636c7ff90706497fb.svg",
+    "index.html": "/index.html",
+    "static/media/css3_logo.svg": "/static/media/css3_logo.315b8fdb9dbf75ae965b80bf368895cd.svg",
+    "static/media/html5_logo.svg": "/static/media/html5_logo.0107c93943a8f415b5db64ebb0a9d12d.svg",
+    "main.81ccd734.css.map": "/static/css/main.81ccd734.css.map",
+    "main.3d225e76.js.map": "/static/js/main.3d225e76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81ccd734.css",
+    "static/js/main.3d225e76.js"
+  ]
+}
