@@ -6,6 +6,7 @@ const { deleteFavRoute } = require('./routes/deleteFavRoute.js');
 const { getCharByIdRoute } = require('./routes/getCharacterRoute.js');
 const { loginRoute } = require('./routes/loginRoute.js');
 const { signUpRoute } = require('./routes/signUpRoute.js');
+const cors = require('cors');
 
 const server = express();
 
@@ -23,6 +24,7 @@ server.use((req, res, next) => {
     next();
 });
 
+app.use(cors()); 
 server.use(express.json())
 
 server.use('/rickandmorty', addFavRoute);
