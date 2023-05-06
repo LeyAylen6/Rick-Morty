@@ -24,7 +24,7 @@ server.use((req, res, next) => {
     next();
 });
 
-app.use(cors()); 
+server.use(cors()); 
 server.use(express.json())
 
 server.use('/rickandmorty', addFavRoute);
