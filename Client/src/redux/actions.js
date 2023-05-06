@@ -39,6 +39,7 @@ export const accessLogin = async (userData, dispatch) => {
    const response = await axios(`/login?email=${email}&password=${password}`)
 
    try {
+      console.log(response.data)
       const userAndAccess = response.data;
       dispatch({ type: ACCESS_LOGIN, payload: userAndAccess })
       
