@@ -4,7 +4,8 @@ const getCharById = async (id) => {
     const { API_KEY, URL_BASE } = process.env;
     
     try {
-        var response = await axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+        // var response = await axios(`${URL_BASE}/${id}?key=${API_KEY}`) // PARA API HENRY
+        var response = await axios(`${URL_BASE}/${id}`) // PARA API ORIGINAL
         response = { 
             status: response.status, 
             character : {

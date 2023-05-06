@@ -10,11 +10,11 @@ const { signUpRoute } = require('./routes/signUpRoute.js');
 const server = express();
 
 server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header(
        'Access-Control-Allow-Headers',
-       '*'
+       'Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With"'
     )
     res.header(
        'Access-Control-Allow-Methods',
