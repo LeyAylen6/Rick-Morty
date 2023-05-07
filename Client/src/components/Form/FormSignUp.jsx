@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validation } from "./../Validation/validation.js"
 import { createNewAccount } from "../../redux/actions.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styles from './forms.module.css'
 import { redirectLogIn } from "../../redux/actions.js";
 

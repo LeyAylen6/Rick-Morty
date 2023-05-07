@@ -22,7 +22,7 @@ const Detail = () => {
     return (
         <section className={styles.characterContainer}>
             <div className={styles.imagenContainer}>
-                {character ? <img src={character.image} className={styles.imageDetail}></img> : 'Este personaje no tiene imagen'}
+                {character ? <img alt='character' src={character.image} className={styles.imageDetail}></img> : 'Este personaje no tiene imagen'}
             </div>
             
             <div className={styles.division}></div>
