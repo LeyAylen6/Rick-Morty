@@ -39,7 +39,7 @@ export const rootReducer = (state = initialState, { type, payload }) => {
             return { 
                 ...state, 
                 myFavorites: payload,
-                favoritesFiltered: payload
+                favoritesFiltered: [...state.myFavorites, payload],
             };
 
         case REMOVE_FAV:

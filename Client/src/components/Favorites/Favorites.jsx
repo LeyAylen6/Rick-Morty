@@ -47,7 +47,7 @@ const Favorites = (props) => {
             </div>
 
             <div className={styles.cardsContainer}>
-                {props.myFavorites.map((character) => <Card character={character} key={character.id} /> )}
+                {props.myFavorites.map((character) => <Card character={character} button={false} key={character.id} /> )}
             </div>
             
         </div>

@@ -87,9 +87,9 @@ export const addFav = async (character, user, dispatch) => {
    }
 };
 
-export const removeFav = async (id, dispatch) => {
+export const removeFav = async (id, user, dispatch) => {
    
-   const response = await axios.delete(`${URL_REMOVE_FAV_BY_ID}${id}`)
+   const response = await axios.delete(`${URL_REMOVE_FAV_BY_ID}${id}`, user)
    
    try {
       dispatch({ type: 'REMOVE_FAV', payload: response.data });
