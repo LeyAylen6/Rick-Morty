@@ -1,16 +1,17 @@
 const addFavRoute = require('express').Router()
 const { postFav } = require('../controllers/postFav.js')
 
-addFavRoute.post('/fav', (req, res) => {
+addFavRoute.post('/fav', async (req, res) => {
     try {
-        const { name, origin, status, image, species, gender } = req.body
+        const { character } = req.body
+        const { id, name, origin, status, image, species, gender } = character
         const { user } = req.body
 
-        if (!name || !origin || !status || !image || !species || !gender || !user.id ) {
+        if (!id || !name || !origin.name || !status || !image || !species || !gender || !user.id ) {
             return res.status(401).send("Faltan datos")
         }
         
-        const postFavorite = postFav(name, origin, status, image, species, gender, user.id)
+        const postFavorite = await postFav(id, name, origin.name, status, image, species, gender, user.id)
         
         return res.status(200).json(postFavorite);
 

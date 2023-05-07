@@ -11,7 +11,7 @@ const Cards = (props) => {
          <h1>- Home -</h1>
       
          {charactersById && charactersById.map((character) => {
-            return <Card character={character} key={character.id} onClose={props.onClose}/>
+            return <Card character={character} key={character.id} button={true} onClose={props.onClose}/>
          })}
       </div>
    );

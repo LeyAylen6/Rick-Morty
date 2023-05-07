@@ -31,7 +31,7 @@ const Card = (props) => {
          removeFav(props.character.id, user, dispatch)     
       } else {
          setIsFav(true)
-         addFav(props.character, user, dispatch)            
+         addFav(props.character, user, dispatch)        
       }
    }
 
@@ -51,14 +51,12 @@ const Card = (props) => {
 
          <button onClick={handleFavorite} className={styles.favorite}> { isFav ? '❤️' : '🤍' }</button> 
          
-         {onClose ? <button className={styles.button} onClick={onClose}><HighlightOffIcon fontSize="small"/></button> : null}
+         {props.button ? <button className={styles.button} onClick={onClose}><HighlightOffIcon fontSize="small"/></button> : null}
          
          <Link to={`/detail/${props.character.id}`} className={styles.linkName}>
             <img className={styles.img} src={props.character.image} alt='Rick and Morty' />
          </Link>
       </div>
-
-      
    );
 }
 
