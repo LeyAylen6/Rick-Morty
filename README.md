@@ -19,9 +19,9 @@ File structure:
 - `DB_HOST`
 
 #### ❓ Where do I find this data?
-You have to create a database on your computer with a username and password. This values are `DB_USER` and `DB_PASSWORD`.
-`PORT` will be the port where your server will be running.
-`DB_HOST` will be the host where your Database will be running.
+- You have to create a database on your computer with a username and password. This values are `DB_USER` and `DB_PASSWORD`.
+- `PORT` will be the port where your server will be running.
+- `DB_HOST` will be the host where your Database will be running.
 
 📍 Then, you can run:
 
