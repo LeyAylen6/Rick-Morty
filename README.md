@@ -1,4 +1,5 @@
-#Rick And Morty App
+# Rick And Morty App
+
 ***
 
 # 📌 About this proyect
@@ -36,4 +37,7 @@ You have to create a database on your computer with a username and password. Thi
 
 <!-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser. -->
 
-['./assets/proyectVideo.mp4']
+<div align="center"> 
+    <img align="center" style="height: 200px; width: 850px" src='./assets/proyectVideo.mp4'></img>
+</div>
+  
