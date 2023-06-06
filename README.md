@@ -37,26 +37,26 @@ You have to create a database on your computer with a username and password. Thi
 
 ## 📌 Sections of this project
 
-### Login:
-You can create a new account and login to an already created account
+### ⚡️Login:
+- You can create a new account and login to an already created account
 <div align="center"> 
-    <img align="center" style="height: 200px; width: 850px" src='./assets/login.gif'></img>
+    <img align="center" src='./assets/login.gif'></img>
 </div>
 
-### Home:
-You can search characters by id or random. Then you can delete them
+### ⚡️Home:
+- You can search characters by id or random. Then you can delete them
 <div align="center"> 
     <img align="center" src='./assets/home.gif'></img>
 </div>
 
-### About:
-This section can info about me.
+### ⚡️About:
+- This section can info about me.
 <div align="center"> 
     <img align="center" src='./assets/about.gif'></img>
 </div>
 
-### Logout:
-Log out and return to the main page
+### ⚡️Logout:
+- Log out and return to the main page
 <div align="center"> 
     <img align="center" src='./assets/logout.gif'></img>
 </div>
