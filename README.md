@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Rick And Morty App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 About this proyect
 
-## Available Scripts
+This project was created with:
+- __Front End__: React, Redux, Html, Css
+- __Back End__: Node Js, Express, Sequelize
+- __Database__: PostgreSQL
 
-In the project directory, you can run:
+### 📌 How to start this page ?
 
-### `npm start`
+This project needs a `.env` file inside the Server folder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+File structure:
+- `URL_BASE='https://rickandmortyapi.com/api/character'`
+- `DB_USER`
+- `DB_PASSWORD`
+- `PORT`
+- `DB_HOST`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### ❓ Where do I find this data?
+- You have to create a database on your computer with a username and password. This values are `DB_USER` and `DB_PASSWORD`.
+- `PORT` will be the port where your server will be running.
+- `DB_HOST` will be the host where your Database will be running.
 
-### `npm test`
+📍 Then, you can run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- In Server folder:
+  - `npm install` 
+  - `npm start` 
 
-### `npm run build`
+- In Client folder:
+  - `npm install` 
+  - `npm start` 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser. -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📌 Sections of this project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚡️Login:
+- You can create a new account and login to an already created account
+<div align="center"> 
+    <img align="center" src='./assets/login.gif'></img>
+</div>
 
-### `npm run eject`
+### ⚡️Home:
+- You can search characters by id or random. Then you can delete them
+<div align="center"> 
+    <img align="center" src='./assets/home.gif'></img>
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ⚡️About:
+- This section can info about me.
+<div align="center"> 
+    <img align="center" src='./assets/about.gif'></img>
+</div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### ⚡️Logout:
+- Log out and return to the main page
+<div align="center"> 
+    <img align="center" src='./assets/logout.gif'></img>
+</div>
+  
