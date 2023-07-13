@@ -8,6 +8,7 @@ export const ADD_FAV = 'ADD_FAV'
 export const REMOVE_FAV = 'REMOVE_FAV'
 export const FILTER = 'FILTER'
 export const ORDER = 'ORDER'
+export const LOGOUT = 'LOGOUT'
 
 // ! PETICIONES CON ASYNC AWAIT
 
@@ -48,7 +49,7 @@ export const accessLogin = async (userData, dispatch) => {
 }
 
 export const logout = () => {
-   return {type: ACCESS_LOGIN, payload: {access: false}}
+   return {type: LOGOUT, payload: { access: false }}
 }
 
 export const getCharactersById = async (id, dispatch) => {

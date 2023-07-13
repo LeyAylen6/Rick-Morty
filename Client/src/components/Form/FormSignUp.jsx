@@ -50,7 +50,7 @@ const Form = () => {
             {inputs?.map(input => {
 
                 return (
-                <div className={styles.inputContainer}>
+                <div key={input} className={styles.inputContainer}>
 
                     <label className={styles.label} htmlFor={input} >{input}</label>
                     <input className={styles.input} name={input} type={input == 'password' ? 'password' : 'text'} onChange={handleChange} value={newUserData.input} placeholder="Ej: email@gmail.com"></input>                      
