@@ -4,7 +4,6 @@
     z-index: 1;
     width: 300px;
     height: 350px;
-    border-radius: 30px;
     box-shadow: 5px 7px 15px black;
     display: flex;
     flex-direction: column;
