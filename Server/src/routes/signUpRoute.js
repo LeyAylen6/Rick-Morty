@@ -3,7 +3,7 @@ const { postUser } = require('../controllers/postUser.js')
 
 signUpRoute.post('/signUp', async(req, res) => { //Dice que sea /login??
     try {
-        const { username, email, password} = req.body;
+        const { username, email, password } = req.body;
 
         if ( !username || !email || !password ) {
             return res.status(400).send("Faltan datos");
