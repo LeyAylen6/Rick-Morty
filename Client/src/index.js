@@ -7,7 +7,7 @@ import { store } from './redux/store.js';
 import { Provider } from 'react-redux';
 import axios from 'axios';
 
-axios.defaults.baseURL= 'https://rick-morty-production.up.railway.app/rickandmorty';
+axios.defaults.baseURL= "https://servidor-rick-and-morty.onrender.com";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
