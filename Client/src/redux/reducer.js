@@ -1,4 +1,4 @@
-import { SIGN_UP, ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions"
+import { SIGN_UP, ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMOVE_FAV, FILTER, ORDER, LOGOUT} from "./actions"
 
 const initialState = {
     signUp: true,
@@ -23,6 +23,12 @@ export const rootReducer = (state = initialState, { type, payload }) => {
                 accessLogin: payload,
                 myFavorites: payload.user.Favorites,
                 favoritesFiltered: payload.user.Favorites
+            }
+
+        case LOGOUT:
+            return {
+                ...state,
+                accessLogin: payload
             }
 
         case GET_CHARACTERS_BY_ID:
