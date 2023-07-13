@@ -1,6 +1,6 @@
 const { user_favorite } = require('../DB_connection');
 
-const deleteFav = async (id, userId) => {
+const deleteFav = async (characterId, userId) => {
     
   const userFound = await user_favorite.findOne({
     where: { UserId: userId }
@@ -9,18 +9,19 @@ const deleteFav = async (id, userId) => {
   if (!userFound) throw new Error('El usuario no existe')
 
   const falvoriteFound = await user_favorite.findOne({
-    where: { UserId: userId, FavoriteId: id }
+    where: { UserId: userId, FavoriteId: characterId }
   })
 
-  if (!falvoriteFound) throw new Error(`El usuario no tiene favoritos con el id ${id}`)
+  if (!falvoriteFound) throw new Error(`El usuario no tiene favoritos con el id ${characterId}`)
 
   await user_favorite.destroy({
     where: {
-      UserId: id,
-      FavoriteId: userId
+      UserId: userId,
+      FavoriteId: characterId
     }
   });
-  return id;
+
+  return characterId;
 };
 
 module.exports = { deleteFav }

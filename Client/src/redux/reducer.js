@@ -2,7 +2,7 @@ import { SIGN_UP, ACCESS_LOGIN, GET_CHARACTERS_BY_ID, DELETE_CARD, ADD_FAV, REMO
 
 const initialState = {
     signUp: true,
-    accessLogin: {access: false},
+    accessLogin: { access: false },
     charactersById: [],
     myFavorites: [], 
     favoritesFiltered: []
@@ -20,7 +20,9 @@ export const rootReducer = (state = initialState, { type, payload }) => {
         case ACCESS_LOGIN:
             return {
                 ...state,
-                accessLogin: payload
+                accessLogin: payload,
+                myFavorites: payload.user.Favorites,
+                favoritesFiltered: payload.user.Favorites
             }
 
         case GET_CHARACTERS_BY_ID:
@@ -39,14 +41,14 @@ export const rootReducer = (state = initialState, { type, payload }) => {
             return { 
                 ...state, 
                 myFavorites: payload,
-                favoritesFiltered: [...state.myFavorites, payload],
+                favoritesFiltered: payload,
             };
 
         case REMOVE_FAV:
             return { 
                 ...state, 
-                myFavorites: payload,
-                favoritesFiltered: payload
+                myFavorites: [...state.myFavorites].filter(character => character.id != payload),
+                favoritesFiltered: [...state.favoritesFiltered].filter(character => character.id != payload)
             };
         
         case FILTER:

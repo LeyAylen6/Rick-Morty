@@ -39,7 +39,6 @@ export const accessLogin = async (userData, dispatch) => {
    const response = await axios(`/login?email=${email}&password=${password}`)
 
    try {
-      console.log(response.data)
       const userAndAccess = response.data;
       dispatch({ type: ACCESS_LOGIN, payload: userAndAccess })
       
@@ -73,17 +72,18 @@ export const deleteCard = (id) => {
 export const addFav = async (character, user, dispatch) => {
 
    try {
-      const response = await axios.post('/fav', {character, user})
+      const response = await axios.post('/fav', { character, user })
       dispatch({ type: ADD_FAV, payload: response.data});
    
    } catch(error) {
+
       // dispatch de un estado error.
    }
 };
 
-export const removeFav = async (id, user, dispatch) => {
+export const removeFav = async (characterId, userId, dispatch) => {
    
-   const response = await axios.delete(`${URL_REMOVE_FAV_BY_ID}${id}`, user)
+   const response = await axios.delete(`/fav/${characterId}`, { data: { userId: userId }})
    
    try {
       dispatch({ type: 'REMOVE_FAV', payload: response.data });

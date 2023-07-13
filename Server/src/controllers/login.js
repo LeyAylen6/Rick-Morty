@@ -1,8 +1,10 @@
-const { User } = require('./../DB_connection');
+const { User, Favorite } = require('./../DB_connection');
 
 const login = async(email, password) => {
+    
     const user = await User.findOne({ 
-        where: { email: email } // Si no existe devuelve null, sino el usuario.
+        where: { email: email },
+        include: Favorite
     });
 
     if(!user) {
@@ -11,6 +13,7 @@ const login = async(email, password) => {
     } else if (user.password != password) {
         throw new Error('Contraseña incorrecta')
     }
+
     return { user: user, access: true }
 }
 

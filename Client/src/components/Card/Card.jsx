@@ -15,7 +15,6 @@ const Card = (props) => {
    let user = useSelector((state) => state.accessLogin.user)      
 
    useEffect(() => {
-      console.log(myFavorites)
       myFavorites.forEach((fav) => {
          
          if (fav.id == props.character.id) {
@@ -28,7 +27,7 @@ const Card = (props) => {
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false)
-         removeFav(props.character.id, user, dispatch)     
+         removeFav(props.character.id, user.id, dispatch)     
       } else {
          setIsFav(true)
          addFav(props.character, user, dispatch)        

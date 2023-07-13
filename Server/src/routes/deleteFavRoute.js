@@ -3,11 +3,10 @@ const { deleteFav } = require('../controllers/deleteFav.js')
 
 deleteFavRoute.delete('/fav/:id', async(req, res) => {
     try {
-        const { id } = req.params
-        const { user } = req.body
+        const characterId = req.params.id;
+        const { userId } = req.body;
 
-        const deleteById = await deleteFav(id, user.id)
-
+        const deleteById = await deleteFav(Number(characterId), userId)
         return res.status(200).json(deleteById)
         
     } catch (error) {

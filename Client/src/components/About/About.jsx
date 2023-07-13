@@ -21,7 +21,6 @@ const About = () => {
 
             <div className={styles.containerFlex}>
             
-
                 <div className={styles.imageContainer}>
                     <img className={styles.image} src={image} />
                 </div>
@@ -33,11 +32,11 @@ const About = () => {
                     
                     <div className={styles.contact}>
                         <h3>You can find me at:</h3>
-                        <a href='https://github.com/LeyAylen6'>
+                        <a href='https://github.com/LeyAylen6' target="_blank">
                             <img src={github_logo} className={`${styles.logo} ${styles.githubLogo}`} name='Github' alt='Github'/>
                         </a>
                         
-                        <a href='https://www.linkedin.com/in/leilaaylensalguero/'>
+                        <a href='https://www.linkedin.com/in/leilaaylensalguero/' target="_blank">
                             <img src={linkedin_logo} className={`${styles.logo} ${styles.linkedInLogo}`} name='LinkedIn' alt='LinkedIn'></img>
                         </a>
                     </div>
